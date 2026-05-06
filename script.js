@@ -584,9 +584,6 @@ function saveResponse(code, title, averages) {
     document.getElementById("save-status").textContent = "送信に失敗しました。";
   });
 
-  console.log("保存データ:", payload);
-  document.getElementById("save-status").textContent =
-    "このたたき台では、結果はこのブラウザ内に仮保存されています。Googleフォーム連携は次の段階で追加できます。";
 }
 
 function copyResult() {
