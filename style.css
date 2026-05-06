@@ -649,3 +649,51 @@ button:hover {
   }
 
 }
+
+/* 4分類カラー */
+
+.group-writer {
+  --group-color: #263f73;
+  --group-soft: rgba(38, 63, 115, 0.14);
+}
+
+.group-organizer {
+  --group-color: #c9342b;
+  --group-soft: rgba(201, 52, 43, 0.14);
+}
+
+.group-mc {
+  --group-color: #2f7d57;
+  --group-soft: rgba(47, 125, 87, 0.14);
+}
+
+.group-owner {
+  --group-color: #8a4fb3;
+  --group-soft: rgba(138, 79, 179, 0.14);
+}
+
+/* 結果画面の色反映 */
+
+#result-screen .result-hero {
+  background:
+    linear-gradient(135deg, var(--group-soft), transparent 52%),
+    #fffdf7;
+}
+
+#result-screen .result-code {
+  border-color: var(--group-color);
+  color: var(--group-color);
+}
+
+#result-screen .result-english {
+  color: var(--group-color);
+}
+
+#result-screen .result-catch {
+  color: var(--group-color);
+  background: linear-gradient(transparent 58%, var(--group-soft) 58%);
+}
+
+#result-screen .axis-badge span {
+  background: var(--group-color);
+}
