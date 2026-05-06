@@ -362,6 +362,28 @@ const typeData = {
   }
 };
 
+const typeGroups = {
+  BWCL: { group: "作家", className: "group-writer" },
+  BWCS: { group: "作家", className: "group-writer" },
+  TWCL: { group: "作家", className: "group-writer" },
+  TWCS: { group: "作家", className: "group-writer" },
+
+  BWFL: { group: "主催者", className: "group-organizer" },
+  BWFS: { group: "主催者", className: "group-organizer" },
+  TWFL: { group: "主催者", className: "group-organizer" },
+  TWFS: { group: "主催者", className: "group-organizer" },
+
+  BACS: { group: "MC", className: "group-mc" },
+  BACL: { group: "MC", className: "group-mc" },
+  TACS: { group: "MC", className: "group-mc" },
+  TACL: { group: "MC", className: "group-mc" },
+
+  BAFS: { group: "箱主", className: "group-owner" },
+  BAFL: { group: "箱主", className: "group-owner" },
+  TAFS: { group: "箱主", className: "group-owner" },
+  TAFL: { group: "箱主", className: "group-owner" }
+};
+
 let currentIndex = 0;
 let answers = [];
 
@@ -510,6 +532,16 @@ function decideType() {
 function showResult() {
   const { code, averages } = decideType();
   const result = typeData[code];
+  const groupInfo = typeGroups[code];
+
+resultScreen.classList.remove(
+  "group-writer",
+  "group-organizer",
+  "group-mc",
+  "group-owner"
+);
+
+resultScreen.classList.add(groupInfo.className);
 
   document.getElementById("result-code").textContent = code;
   document.getElementById("result-type").textContent = result.name;
