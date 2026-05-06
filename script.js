@@ -381,6 +381,7 @@ document.getElementById("start-btn").addEventListener("click", startDiagnosis);
 document.getElementById("finish-btn").addEventListener("click", showResult);
 document.getElementById("restart-btn").addEventListener("click", () => location.reload());
 document.getElementById("copy-btn").addEventListener("click", copyResult);
+document.getElementById("back-btn").addEventListener("click", previousQuestion);
 document.getElementById("share-x-btn").addEventListener("click", shareToX);
 
 function startDiagnosis() {
@@ -433,6 +434,13 @@ function renderQuestion() {
       <span class="scale-edge-label">${q.leftLabel}</span>
     </div>
   `;
+     const backBtn = document.getElementById("back-btn");
+
+if (currentIndex === 0) {
+  backBtn.classList.add("hidden");
+} else {
+  backBtn.classList.remove("hidden");
+} 
 }
 else if (value === 5) {
   btn.innerHTML = `
@@ -621,4 +629,24 @@ ${diagnosisUrl}
     encodeURIComponent(text);
 
   window.open(shareUrl, "_blank");
+}
+function previousQuestion() {
+
+  // 1問目なら戻れない
+  if (currentIndex === 0) return;
+
+  // 問題番号を1つ戻す
+  currentIndex -= 1;
+
+  // 今戻った問題の情報を取得
+  const previousQuestionData = questions[currentIndex];
+
+  // 保存されていた回答を削除
+  axisValues[previousQuestionData.axis].pop();
+
+  // 回答履歴も削除
+  answers.pop();
+
+  // 画面を再表示
+  renderQuestion();
 }
