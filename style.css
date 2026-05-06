@@ -574,3 +574,48 @@ button:hover {
   font-size: 22px;
   font-weight: 1000;
 }
+
+.types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.type-card {
+  background: #fffdf7;
+  border: 2px solid var(--ink);
+  padding: 18px;
+  box-shadow: 5px 5px 0 rgba(23,20,18,0.15);
+}
+
+.type-code {
+  display: inline-block;
+  border: 2px solid var(--red);
+  color: var(--red);
+  padding: 4px 8px;
+  font-weight: 1000;
+  margin-bottom: 10px;
+}
+
+.type-name {
+  font-size: 36px;
+  margin: 0;
+}
+
+.type-english {
+  color: var(--blue);
+  font-weight: 1000;
+  margin-bottom: 12px;
+}
+
+.type-catch {
+  font-weight: 900;
+  line-height: 1.7;
+}
+
+.type-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
