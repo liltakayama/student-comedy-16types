@@ -617,5 +617,35 @@ button:hover {
 .type-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+  padding: 14px 22px;
+
   text-decoration: none;
+
+  border: 2px solid var(--ink);
+
+  box-shadow: 5px 5px 0 var(--ink);
+
+  font-weight: 1000;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 560px) {
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button,
+  .actions a {
+    width: 100%;
+  }
+
 }
