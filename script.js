@@ -604,7 +604,7 @@ function shareToX() {
   const english = document.getElementById("result-english").textContent;
   const catchText = document.getElementById("result-catch").textContent;
 
-  const diagnosisUrl = "https://あなたのGitHubユーザー名.github.io/リポジトリ名/";
+  const diagnosisUrl = "https://liltakayama.github.io/student-comedy-16types/";
 
   const text =
 `学生お笑い16タイプ診断をやりました！
@@ -614,13 +614,14 @@ ${resultName}（${code} / ${english}）
 
 ${catchText}
 
+↓診断はこちら
+${diagnosisUrl}
+
 #学生お笑い16タイプ診断`;
 
   const shareUrl =
     "https://twitter.com/intent/tweet?text=" +
-    encodeURIComponent(text) +
-    "&url=" +
-    encodeURIComponent(diagnosisUrl);
+    encodeURIComponent(text);
 
   window.open(shareUrl, "_blank");
 }
