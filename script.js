@@ -426,7 +426,27 @@ function renderQuestion() {
   for (let value = 1; value <= 5; value++) {
     const btn = document.createElement("button");
     btn.className = "scale-btn";
-    btn.textContent = value;
+    if (value === 1) {
+  btn.innerHTML = `
+    <div class="scale-inline">
+      <span class="scale-number">1</span>
+      <span class="scale-edge-label">${q.leftLabel}</span>
+    </div>
+  `;
+}
+else if (value === 5) {
+  btn.innerHTML = `
+    <div class="scale-inline">
+      <span class="scale-number">5</span>
+      <span class="scale-edge-label">${q.rightLabel}</span>
+    </div>
+  `;
+}
+else {
+  btn.innerHTML = `
+    <div class="scale-number-only">${value}</div>
+  `;
+}
     btn.onclick = () => answerQuestion(value);
     buttons.appendChild(btn);
   }
