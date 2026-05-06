@@ -696,29 +696,6 @@ button:hover {
 
 #result-screen .axis-badge span {
   background: var(--group-color);
-
-  .type-card {
-  border-color: var(--group-color);
-}
-
-.type-card .type-code {
-  border-color: var(--group-color);
-  color: var(--group-color);
-}
-
-.type-card .type-english {
-  color: var(--group-color);
-}
-
-.type-group {
-  display: inline-block;
-  background: var(--group-color);
-  color: #fff8ea;
-  border: 2px solid var(--ink);
-  padding: 4px 8px;
-  font-weight: 1000;
-  margin-bottom: 10px;
-}
 }
 
 /* 一覧カード色 */
