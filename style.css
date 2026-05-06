@@ -720,3 +720,73 @@ button:hover {
   margin-bottom: 10px;
 }
 }
+
+/* 一覧カード色 */
+
+.type-card.group-writer {
+  border-color: #263f73;
+  background:
+    linear-gradient(135deg, rgba(38, 63, 115, 0.14), transparent 55%),
+    #fffdf7;
+}
+
+.type-card.group-organizer {
+  border-color: #c9342b;
+  background:
+    linear-gradient(135deg, rgba(201, 52, 43, 0.14), transparent 55%),
+    #fffdf7;
+}
+
+.type-card.group-mc {
+  border-color: #2f7d57;
+  background:
+    linear-gradient(135deg, rgba(47, 125, 87, 0.14), transparent 55%),
+    #fffdf7;
+}
+
+.type-card.group-owner {
+  border-color: #8a4fb3;
+  background:
+    linear-gradient(135deg, rgba(138, 79, 179, 0.14), transparent 55%),
+    #fffdf7;
+}
+
+/* コード色 */
+
+.type-card.group-writer .type-code,
+.type-card.group-writer .type-english,
+.type-card.group-writer .type-group {
+  color: #263f73;
+  border-color: #263f73;
+}
+
+.type-card.group-organizer .type-code,
+.type-card.group-organizer .type-english,
+.type-card.group-organizer .type-group {
+  color: #c9342b;
+  border-color: #c9342b;
+}
+
+.type-card.group-mc .type-code,
+.type-card.group-mc .type-english,
+.type-card.group-mc .type-group {
+  color: #2f7d57;
+  border-color: #2f7d57;
+}
+
+.type-card.group-owner .type-code,
+.type-card.group-owner .type-english,
+.type-card.group-owner .type-group {
+  color: #8a4fb3;
+  border-color: #8a4fb3;
+}
+
+/* グループラベル */
+
+.type-group {
+  display: inline-block;
+  padding: 4px 8px;
+  font-weight: 1000;
+  margin-bottom: 10px;
+  border: 2px solid;
+}
