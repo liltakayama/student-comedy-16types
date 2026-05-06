@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>学生お笑い16タイプ診断</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <div class="poster-bg-text">COMEDY TYPE CHECK</div>
+    <section id="start-screen" class="card">
+      <div class="ticket-row"><span>STUDENT COMEDY</span><span>16 TYPES</span></div>
+      <p class="eyebrow">学生お笑い16タイプ診断</p>
+      <h1>あなたの「学生芸人タイプ」を診断します</h1>
+      <p class="stamp">全28問 / 約3分</p>
+      <p class="lead">
+        28問の質問に答えると、あなたの学生お笑いにおける立ち位置・強み・クセを16タイプで診断します。
+      </p>
+
+      <label class="field">
+        名前・ニックネーム
+        <input id="user-name" type="text" placeholder="例：たこやま" />
+      </label>
+
+      <label class="check">
+        <input id="research-consent" type="checkbox" />
+        <span>診断結果とアンケート回答を、集計・分析に使用することに同意します。</span>
+      </label>
+
+      <button id="start-btn" class="primary">開演する</button>
+      <p id="start-error" class="error"></p>
+    </section>
+
+    <section id="question-screen" class="card hidden">
+      <div class="progress">
+        <span id="progress-text"></span>
+        <div class="bar"><div id="progress-bar"></div></div>
+      </div>
+
+      <h2 id="question-title"></h2>
+      <p id="question-help" class="muted">直感で近い方を選んでください。</p>
+
+      <div id="choices" class="choices"></div>
+    </section>
+
+    <section id="survey-screen" class="card hidden">
+      <p class="eyebrow">AFTER TALK</p>
+      <h2>最後に少しだけ教えてください</h2>
+
+      <label class="field">
+        あなたの主な立場
+        <select id="survey-role">
+          <option value="">選択してください</option>
+          <option>演者</option>
+          <option>作家・構成</option>
+          <option>スタッフ・運営</option>
+          <option>見る専・観客</option>
+          <option>その他</option>
+        </select>
+      </label>
+
+      <label class="field">
+        お笑い歴
+        <select id="survey-years">
+          <option value="">選択してください</option>
+          <option>未経験</option>
+          <option>1年未満</option>
+          <option>1〜2年</option>
+          <option>3〜4年</option>
+          <option>5年以上</option>
+        </select>
+      </label>
+
+      <label class="field">
+        MBTIを教えてください
+        <input id="survey-mbti" type="text" placeholder="例：ENTP、INFJ、わからない など" />
+      </label>
+      
+      <label class="field">
+        あなたの属性を教えてください
+        <select id="survey-status">
+          <option value="">選択してください</option>
+          <option>学生芸人</option>
+          <option>プロ</option>
+          <option>社会人芸人</option>
+          <option>元学生芸人</option>
+          <option>観客・見る専</option>
+          <option>その他</option>
+        </select>
+      </label>
+
+      <label class="field">
+        診断結果に入れてほしい観点・質問があれば教えてください
+        <textarea id="survey-comment" rows="4" placeholder="自由記述"></textarea>
+      </label>
+
+      <button id="finish-btn" class="primary">結果を見る</button>
+    </section>
+
+    <section id="result-screen" class="card hidden">
+      <p class="eyebrow">RESULT</p>
+
+      <div class="result-hero">
+        <div class="result-label">あなたのタイプは</div>
+        <div id="result-code" class="result-code"></div>
+        <h2 id="result-type"></h2>
+        <p id="result-english" class="result-english"></p>
+        <p id="result-catch" class="result-catch"></p>
+      </div>
+
+      <div class="axis-badges" id="axis-badges"></div>
+
+      <div class="result-grid detail">
+        <div class="result-main">
+          <h3>あなたの傾向</h3>
+          <p id="result-description"></p>
+        </div>
+        <div>
+          <h3>強み</h3>
+          <ul id="strength-list" class="tag-list"></ul>
+        </div>
+        <div>
+          <h3>注意点</h3>
+          <ul id="weakness-list" class="tag-list"></ul>
+        </div>
+        <div>
+          <h3>向いている役割</h3>
+          <ul id="role-list" class="tag-list"></ul>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="share-x-btn" class="primary">Xで結果を共有</button>
+        <button id="copy-btn" class="secondary">結果をコピー</button>
+        <button id="restart-btn" class="secondary">もう一度診断する</button>
+      </div>
+
+      <p id="save-status" class="muted"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
